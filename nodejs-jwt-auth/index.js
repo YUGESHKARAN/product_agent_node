@@ -7,7 +7,8 @@ const app =express();
 const bcrypt = require('bcryptjs'); 
 const jwt = require('jsonwebtoken');    
 const cookieParser = require('cookie-parser');  
-const {connectionToMongiDB} = require('./db')
+const {connectionToMongiDB} = require('./db');
+const serverless = require("serverless-http");
 const authMiddleware = require('./Middleware/authMiddleware'); // Importing the authentication middleware  
 
 
@@ -45,19 +46,14 @@ app.use('/users', authMiddleware,usersRoutes)
 app.use('/products', authMiddleware,productRoutes)
 
 
-app.listen(3000|| process.env.PORT,(err)=>{
-if(err){
-        console.log("Error in starting server",err);
-        return;
-    }
-console.log(`Server running in the PORT ${process.env.PORT}`);  
-})
+// app.listen(3000|| process.env.PORT,(err)=>{
+// if(err){
+//         console.log("Error in starting server",err);
+//         return;
+//     }
+// console.log(`Server running in the PORT ${process.env.PORT}`);  
+// })
 
 
-// {
-//   "username":"user2",
-//   "password":"authenticate2",
-//   "email":"user2@gmail.com",
-//   "gender":"female",
-//   "role":"Manager"
-// }
+module.exports = app;
+module.exports.handler = serverless(app);

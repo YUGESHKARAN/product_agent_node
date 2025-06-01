@@ -65,7 +65,7 @@ const handleSubmit = async(e)=>{
         type="email"
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your name"
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-50"
+        className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-50"
       />
     </div>
 
@@ -78,7 +78,7 @@ const handleSubmit = async(e)=>{
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Enter your password"
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-50"
+        className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 bg-gray-50"
       />
     </div>
 

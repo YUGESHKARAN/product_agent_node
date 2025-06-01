@@ -104,6 +104,7 @@ const handleEditProduct = async(e)=>{
       if(image!==''){
         formData.append('image', image);
       }
+      const email = localStorage.getItem('email'); // Get the email from localStorage
 
       try{
         const response = await axiosInstance.put(`/products/${email}/${id}`, formData);

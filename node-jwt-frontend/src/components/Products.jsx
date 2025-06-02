@@ -60,6 +60,7 @@ function Products() {
   }
     
     const getProducts = async()=>{
+      const email = localStorage.getItem('email');
         try{
           const response = await axiosInstance.get(`/products/${email}`);
             console.log('Response:', response.data);  

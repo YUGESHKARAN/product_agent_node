@@ -36,7 +36,7 @@ function Register() {
       Register
     </h2>
 
-    <p>{error && error}</p>
+    <p className='text-red-400'>{error && error}</p>
 
     <div className="mb-4">
       <label htmlFor="email" className="block text-white font-medium mb-1">

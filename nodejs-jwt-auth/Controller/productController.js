@@ -13,7 +13,7 @@ const s3 = new S3Client({
         accessKeyId : process.env.ACCESS_KEY,
         secretAccessKey : process.env.SECRET_ACCESS_KEY
     },
-    region: process.env.BUCKET_REGION
+    region:"eu-north-1"
 });
 
 const addProducts = async(req,res)=>{

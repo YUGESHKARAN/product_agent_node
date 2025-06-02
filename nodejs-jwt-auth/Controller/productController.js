@@ -76,7 +76,8 @@ const getSingleProduct = async(req,res)=>{
 
 const deleteProduct = async (req, res) => {
   try {
-    const { email, id } = req.params;
+    const email = decodeURIComponent(req.params.email);
+    const id = req.params.id;
 
     // 1. Find user
     const user = await User.findOne({ email });

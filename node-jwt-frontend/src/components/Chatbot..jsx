@@ -173,7 +173,8 @@ const Chatbot = ({ getProducts }) => {
     setMessages((prev) => [...prev, userMessage]);
 
     try {
-      const response = await axios.post("https://ai-product-agent-zes0.onrender.com/query-agent", {
+      // const response = await axios.post("https://ai-product-agent-zes0.onrender.com/query-agent", {
+      const response = await axios.post("http://127.0.0.1:4000/query-agent", {
         email,
         query: inputText
       });

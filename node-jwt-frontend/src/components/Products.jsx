@@ -37,7 +37,7 @@ function Products() {
       if(image!==''){
         formData.append('image', image);
       }
-
+      const email = localStorage.getItem('email');
       try{
         const response = await axiosInstance.post(`/products/${email}`, formData);
         console.log('Response:', response.data);
@@ -134,9 +134,11 @@ const handleEditProduct = async(e)=>{
 }
 
 const deleteProduct = async(id)=>{
+      const email = localStorage.getItem('email')
   try{
+  console.log("Deleting:", { email, id }); 
     
-    const response = await axiosInstance.delete(`products/${email}/${String(id)}`);
+    const response = await axiosInstance.delete(`products/${encodeURIComponent(email)}/${String(id)}`);
    
     if(response.status === 200){
       getProducts(); // Refresh the product list after deletion

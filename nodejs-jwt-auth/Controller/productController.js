@@ -9,11 +9,11 @@ const {S3Client, PutObjectCommand, DeleteObjectCommand} = require('@aws-sdk/clie
 const bucketName = process.env.BUCKET_NAME  
 
 const s3 = new S3Client({
+    region: "eu-north-1",
     credentials:{
         accessKeyId : process.env.ACCESS_KEY,
         secretAccessKey : process.env.SECRET_ACCESS_KEY
-    },
-    region:"eu-north-1"
+    }
 });
 
 const addProducts = async(req,res)=>{

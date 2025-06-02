@@ -14,8 +14,7 @@ const authMiddleware = require('./Middleware/authMiddleware'); // Importing the 
 
 app.use(cookieParser()); // Middleware to parse cookies
 app.use(cors({
-  // origin: ["http://localhost:5173","https://product-agent-node-jgle.vercel.app/"], 
-  origin:"*", 
+  origin: ["https://product-agent-node-jgle.vercel.app/","http://localhost:5173"], 
   credentials: true
 }));
 

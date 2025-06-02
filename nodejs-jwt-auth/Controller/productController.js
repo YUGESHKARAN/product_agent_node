@@ -76,6 +76,7 @@ const getSingleProduct = async(req,res)=>{
 
 const deleteProduct = async (req, res) => {
   try {
+     console.log("Params received:", req.params); // Add this line
     const email = decodeURIComponent(req.params.email);
     const id = req.params.id;
 

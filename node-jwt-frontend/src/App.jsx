@@ -6,6 +6,7 @@ import ProtectedRoute from './ProtectedRoute'
 import { AuthProvider } from './context/AuthContext'
 import Register from './authentication/Register'
 import Products from './components/Products'
+import Verify from './authentication/Verify'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgotPassword" element={<Verify />} />
           <Route
             path="/users"
             element={

@@ -82,7 +82,7 @@ function Register() {
 
      <div className="mb-3 md:mb-6">
       <label htmlFor="gender" className="block text-white font-medium mb-1">
-        Email Id
+        Gender
       </label>
       <select
       onChange={(e) => setGender(e.target.value)}

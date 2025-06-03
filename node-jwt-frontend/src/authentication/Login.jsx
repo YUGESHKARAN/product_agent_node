@@ -89,6 +89,11 @@ const handleSubmit = async(e)=>{
       Submit
     </button>
 
+     <Link
+      to="/forgotPassword"
+      className="block text-center text-green-500 hover:text-green-600 mt-4"
+    >Forgot Password</Link>
+
     <Link
       to="/register"
       className="block text-center text-green-500 hover:text-green-600 mt-4"

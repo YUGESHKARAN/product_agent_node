@@ -56,9 +56,11 @@ const loginRoutes = require('./Routes/login'); // Importing the login route
 const usersRoutes = require('./Routes/users'); // Importing the users route
 const registerRoutes = require('./Routes/register'); // Importing the register route    
 const productRoutes = require('./Routes/productRoutes'); // Importing the product route
+const verifyRoutes = require('./Routes/verifyRoutes.js');
+
 app.use('/login',loginRoutes);
 app.use('/register',registerRoutes); // Register route for user registration
-
+app.use('/verify',verifyRoutes)
 app.use('/users', authMiddleware,usersRoutes)
 app.use('/products', authMiddleware,productRoutes)
 

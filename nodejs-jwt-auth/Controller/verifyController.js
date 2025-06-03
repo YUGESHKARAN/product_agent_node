@@ -2,11 +2,13 @@ const User = require('../Model/usersSchema')
 // otp
 const otpGenerator = require('otp-generator');
 const nodemailer = require('nodemailer');
+const bcrypt = require('bcryptjs')
 
 const sendOtp = async (req, res) => {
   const { email } = req.body;
-  
+  console.log("email received",email)
   try {
+
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
@@ -47,7 +49,9 @@ const sendOtp = async (req, res) => {
 // reset password
 const resetPassword = async (req, res) => {
   const { email, otp, newPassword } = req.body;
-
+ console.log("pass eamil", email)
+ console.log("pass otp", otp)
+ console.log("pass passwoer", newPassword)
   try {
     const user = await User.findOne({ email });
     if (!user) {
@@ -60,10 +64,11 @@ const resetPassword = async (req, res) => {
     }
 
     // Update password
-    user.password = newPassword; // Hash the password in real implementations
-    user.otp = null; // Clear OTP
-    user.otpExpiresAt = null;
+     const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword; // Hash the password in real implementations
+
     await user.save();
+    console.log("password updated successfully")
 
     res.status(200).json({ message: 'Password reset successfully' });
   } catch (error) {

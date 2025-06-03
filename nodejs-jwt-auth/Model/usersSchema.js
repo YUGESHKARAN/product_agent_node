@@ -44,7 +44,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    productDetails:[productSchema]
+    productDetails:[productSchema],
+    otp: { type: String }, // OTP for password reset
+    otpExpiresAt: { type: Date } // Expiry time for the OTP
 
 })
 

@@ -93,7 +93,8 @@ const Chatbot = ({ getProducts }) => {
   const username = localStorage.getItem("user");
 
   const [messages, setMessages] = useState([
-    { sender: "bot", text: `Hello ${username} ! How can I assist you today?` }
+    { sender: "bot", text: `Hello ${username} ! I am a AI Product control agent` },
+    { sender: "bot", text: `I can help you add new products, analyze product details, and perform other operations.` }
   ]);
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef(null);
@@ -121,6 +122,7 @@ const Chatbot = ({ getProducts }) => {
   useEffect(() => {
     if(welcomeMessage){
       speakText(messages[0].text);
+      speakText(messages[1].text);
       setIsSpeaking(true);
     }
   },[welcomeMessage])

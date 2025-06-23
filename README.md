@@ -8,7 +8,7 @@ Meet your next-level assistant: **Product Control Agent** – an AI-powered solu
 
 **Product Control Agent** is built to automate and simplify CRUD operations on your product website, leveraging the latest in AI to streamline workflows and supercharge productivity. With advanced analysis capabilities, it helps you make better decisions, faster.
 
-**Note: This repository does not include the Flask backend. Please visit: [<url>](https://github.com/YUGESHKARAN/ai_product_agent.git) to access or refer to the AI Agent implementation.**
+**Note: This repository does not include the Flask backend. Please visit: [ai_product_agent](https://github.com/YUGESHKARAN/ai_product_agent.git)  to access or refer to the AI Agent implementation.**
 
 ---
 

@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 
 const axiosInstance = axios.create({
   baseURL: 'https://product-agent-node.vercel.app/',
+  // baseURL: 'http://127.0.0.1:3000/',
   withCredentials: true, // needed for cookies
 });
 

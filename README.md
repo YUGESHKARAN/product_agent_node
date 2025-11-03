@@ -1,4 +1,6 @@
 # Product Control Agent
+
+
 [![License: MIT](https://img.shields.io/github/license/YUGESHKARAN/product_agent_node)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/YUGESHKARAN/product_agent_node?style=social)](https://github.com/YUGESHKARAN/product_agent_node/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/YUGESHKARAN/product_agent_node?style=social)](https://github.com/YUGESHKARAN/product_agent_node/network/members)
@@ -6,6 +8,8 @@
 [![Issues](https://img.shields.io/github/issues/YUGESHKARAN/product_agent_node)](https://github.com/YUGESHKARAN/product_agent_node/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/YUGESHKARAN/product_agent_node)](https://github.com/YUGESHKARAN/product_agent_node/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/YUGESHKARAN/product_agent_node)](https://github.com/YUGESHKARAN/product_agent_node/commits/main)
+
+![Product Control Agent UI](ui_product_agent.png)
 
 Meet your next-level assistant: **Product Control Agent** – an AI-powered solution that makes controlling and analyzing your product website smarter and faster. 
 

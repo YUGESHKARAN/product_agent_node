@@ -233,6 +233,7 @@ const deleteProduct = async(id)=>{
                   <img
                     src={`https://my-bkt-tut.s3.eu-north-1.amazonaws.com/${productData.image}`}
                     className="h-16 w-16 object-contain  rounded-md"
+                    onClick={() => handleCardOpen(productData)}
                     alt=""
                   />
                   <p className="text-green-300">Price ₹{productData.price}</p>
@@ -342,12 +343,12 @@ const deleteProduct = async(id)=>{
 
     {/* Product Details Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
+        <div className="fixed w-11/12 mx-auto md:w-full inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
           <div className="bg-[#2d2d44] rounded-lg shadow-lg p-6 w-full max-w-sm text-center relative">
             <button onClick={handleCardClose} className="absolute top-3 right-3 text-white text-sm">✖</button>
             <img
               src={`https://my-bkt-tut.s3.eu-north-1.amazonaws.com/${selectedProduct.image}`}
-              className="w-full h-64 mx-auto object-contains my-4 bg-red-200 rounded-xl"
+              className="md:w-full h-56 md:h-64 mx-auto object-contains my-4 bg-red-200 rounded-xl"
               alt="Product"
             />
             <h2 className="text-xl font-bold text-cyan-300 mb-2">{selectedProduct.product}</h2>

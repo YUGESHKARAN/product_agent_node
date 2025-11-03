@@ -20,7 +20,7 @@ const handleSubmit = async(e)=>{
    
   try{
       const response = await axiosInstance.post('/login',{email, password});
-    console.log('Response:', response.data);
+    // console.log('Response:', response.data);
   
 
     if(response.status==200){

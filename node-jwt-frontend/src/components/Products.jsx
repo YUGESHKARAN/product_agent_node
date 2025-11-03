@@ -23,6 +23,16 @@ function Products() {
     const[showEdit, setShowEdit] = useState(false); // Assuming you might need this for edit functionality
     const [error, setError] = useState(null); 
     const fileInputRef = useRef(null);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+
+    const handleCardOpen = (product) => {
+      setSelectedProduct(product);
+    };
+
+    const handleCardClose = () => {
+      setSelectedProduct(null);
+    };
+
    const {showAgent, setShowAgent} = useAuth(); 
     const handleImage= (e)=>{
          setImage(e.target.files[0]);
@@ -176,6 +186,8 @@ const deleteProduct = async(id)=>{
               products.map((productData, index) => (
                 <div
                   key={index}
+                  
+
                   className="md:grid hidden md:grid-cols-6 gap-4 bg-[#252538] p-3 hover:bg-[#353550] transition-all duration-300 cursor-pointer rounded-md mt-2"
                 >
                   <p>{index + 1}</p>
@@ -183,6 +195,7 @@ const deleteProduct = async(id)=>{
                   <img
                     src={`https://my-bkt-tut.s3.eu-north-1.amazonaws.com/${productData.image}`}
                     className="h-10 w-10 object-cover rounded-md"
+                    onClick={() => handleCardOpen(productData)}
                     alt=""
                   />
                   <p className="text-green-300">₹{productData.price}</p>
@@ -212,6 +225,7 @@ const deleteProduct = async(id)=>{
                   products.map((productData, index) => (
                 <div
                   key={index}
+                  
                   className="flex flex-col md:hidden gap-4 bg-[#252538] p-3 hover:bg-[#353550] transition-all duration-300 cursor-pointer rounded-md mt-2"
                 >
                   {/* <p>{index + 1}</p> */}
@@ -239,7 +253,7 @@ const deleteProduct = async(id)=>{
           <div className="md:w-3/5 w-full mx-auto mt-10 p-6 bg-[#2d2d44] rounded-md shadow-lg text-white">
             <p className="text-sm text-red-400 mb-2">{error && error}</p>
             <h1 className="text-2xl font-bold text-center mb-5">
-              {showEdit ? "✏️ Edit Product" : "➕ Add Product"}
+              {showEdit ? "✏️ Edit Product" : "+ Add Product"}
             </h1>
 
             <form onSubmit={showEdit ? handleEditProduct : handleSubmit}>
@@ -326,7 +340,22 @@ const deleteProduct = async(id)=>{
       
       </div>
 
-
+    {/* Product Details Modal */}
+      {selectedProduct && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center p-4">
+          <div className="bg-[#2d2d44] rounded-lg shadow-lg p-6 w-full max-w-sm text-center relative">
+            <button onClick={handleCardClose} className="absolute top-3 right-3 text-white text-sm">✖</button>
+            <img
+              src={`https://my-bkt-tut.s3.eu-north-1.amazonaws.com/${selectedProduct.image}`}
+              className="w-full h-64 mx-auto object-contains my-4 bg-red-200 rounded-xl"
+              alt="Product"
+            />
+            <h2 className="text-xl font-bold text-cyan-300 mb-2">{selectedProduct.product}</h2>
+            <p className="text-green-400 text-lg mb-1">₹{selectedProduct.price}</p>
+            <p className="text-sm text-gray-300">Warranty: {selectedProduct.waranty?.slice(0, 10)}</p>
+          </div>
+        </div>
+      )}
        
    </div>
 

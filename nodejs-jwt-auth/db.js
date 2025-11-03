@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-
-const connectionToMongiDB = async()=>{
+const mongodbUrl = process.env.MONGODB_URL;
+const connectionToMongDB = async()=>{
     try{
-        await mongoose.connect("mongodb+srv://yugeshkaran01:GEMBkFW5Ny5wi4ox@blog.adtwl.mongodb.net/JWT-AUTH?retryWrites=true&w=majority&appName=User")
+        await mongoose.connect(mongodbUrl)
         console.log("Connected to MongoDB") 
     }
     catch(err){
@@ -11,4 +12,4 @@ const connectionToMongiDB = async()=>{
     }
 }
 
-module.exports = {connectionToMongiDB}
+module.exports = {connectionToMongDB}

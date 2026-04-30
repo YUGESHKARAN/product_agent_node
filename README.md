@@ -119,12 +119,12 @@ product_agent_node/
 - **Backend:**
   ```bash
   cd nodejs-jwt-auth
-  npm start
+  npm run dev
   ```
 - **Frontend:**
   ```bash
   cd node-jwt-frontend
-  npm start
+  npm run dev
   ```
 - **Flask AI Server:**
   ```bash

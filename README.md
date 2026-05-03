@@ -1,5 +1,7 @@
-# Product Control Agent
 
+<div align="center">
+  <h2> Product Control Agent</h2>
+</div>
 
 [![License: MIT](https://img.shields.io/github/license/YUGESHKARAN/product_agent_node)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/YUGESHKARAN/product_agent_node?style=social)](https://github.com/YUGESHKARAN/product_agent_node/stargazers)
@@ -15,7 +17,7 @@ Meet your next-level assistant: **Product Control Agent** – an AI-powered solu
 
 ---
 
-## 🚀 Overview
+## Overview
 
 **Product Control Agent** is built to automate and simplify CRUD operations on your product website, leveraging the latest in AI to streamline workflows and supercharge productivity. With advanced analysis capabilities, it helps you make better decisions, faster. Vist [this link](https://www.linkedin.com/posts/yugeshkaran01_techlovers-ai-llm-activity-7337033147668119553-D03r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADkZ8EIBpAY9uNYV2sgO7Npeu1ePnNN6Who)  to view the application demo. 
 
@@ -23,7 +25,7 @@ Meet your next-level assistant: **Product Control Agent** – an AI-powered solu
 
 ---
 
-## 🔥 Key Features
+## Key Features
 
 - **AI-Driven Automation:** Uses state-of-the-art LLM (Llama 3 70B) to power intelligent CRUD and analysis operations.
 - **Seamless CRUD:** Effortlessly manage products, categories, and data on your website.
@@ -35,7 +37,7 @@ Meet your next-level assistant: **Product Control Agent** – an AI-powered solu
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** React.js, TailwindCSS (`node-jwt-frontend`)
 - **Backend:** Node.js, Express, MongoDB, JWT, CORS (`nodejs-jwt-auth`)
@@ -43,7 +45,7 @@ Meet your next-level assistant: **Product Control Agent** – an AI-powered solu
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 product_agent_node/
@@ -56,7 +58,7 @@ product_agent_node/
 
 ---
 
-## ⚡ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -119,12 +121,12 @@ product_agent_node/
 - **Backend:**
   ```bash
   cd nodejs-jwt-auth
-  npm start
+  npm run dev
   ```
 - **Frontend:**
   ```bash
   cd node-jwt-frontend
-  npm start
+  npm run dev
   ```
 - **Flask AI Server:**
   ```bash
@@ -134,7 +136,7 @@ product_agent_node/
 
 ---
 
-## 🌐 Usage
+## Usage
 
 - Visit [http://localhost:5173](http://localhost:5173) for the frontend.
 - The frontend communicates with the backend for CRUD operations and with the Flask AI service for advanced analysis.
@@ -142,13 +144,13 @@ product_agent_node/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions and ideas are welcome! Open issues or submit pull requests.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 

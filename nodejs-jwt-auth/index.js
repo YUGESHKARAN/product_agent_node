@@ -11,6 +11,11 @@ const {connectionToMongDB} = require('./db');
 const serverless = require("serverless-http");
 const authMiddleware = require('./Middleware/authMiddleware'); // Importing the authentication middleware  
 
+const dns = require("dns");
+
+if (process.env.NODE_ENV === "development") {
+  dns.setServers(["8.8.8.8", "8.8.4.4"]);
+}
 
 app.use(cookieParser()); // Middleware to parse cookies
 // app.use(cors({
@@ -65,14 +70,14 @@ app.use('/users', authMiddleware,usersRoutes)
 app.use('/products', authMiddleware,productRoutes)
 
 
-app.listen(3000|| process.env.PORT,(err)=>{
-if(err){
-        console.log("Error in starting server",err);
-        return;
-    }
-console.log(`Server running in the PORT ${process.env.PORT}`);  
-})
+// app.listen(3000|| process.env.PORT,(err)=>{
+// if(err){
+//         console.log("Error in starting server",err);
+//         return;
+//     }
+// console.log(`Server running in the PORT ${process.env.PORT}`);  
+// })
 
 
-// module.exports = app;
-// module.exports.handler = serverless(app);
+module.exports = app;
+module.exports.handler = serverless(app);
